@@ -1,7 +1,6 @@
 set -o vi
 
 export VISUAL=nvim
-export VISUAL=nvim
 export EDITOR=nvim
 
 export REPOS="$HOME/repos"
@@ -21,3 +20,23 @@ alias gs="git status"
 function chezcd {
   cd $(chezmoi source-path)
 }
+
+# prompt
+if [[ "$OSTYPE" == darwin* ]]; then
+  fpath+=("$(brew --prefix)/share/zsh/site-functions")
+fi
+
+autoload -U promptinit; promptinit
+prompt pure
+
+# completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+fi
+
+autoload -Uz compinit
+compinit -u
+
+# work related
+export PATH="$HOME/code/automation/bin:$PATH"
+QUEUEDR_USER=john
