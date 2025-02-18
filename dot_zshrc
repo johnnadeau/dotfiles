@@ -10,3 +10,14 @@ export DOTFILES="$REPOS/dotfiles"
 export GITHUB_USERNAME="johnnadeau"
 
 export ALACRITTY_TOML="/mnt/c/Users/johnn/AppData/Roaming/alacritty/alacritty.toml"
+
+
+alias v=nvim
+alias ls="ls --color=auto"
+
+alias g=git
+alias gs="git status"
+
+function chezcd {
+  cd $(chezmoi source-path)
+}
