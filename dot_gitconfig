@@ -1,0 +1,11 @@
+[core]
+  editor = $(which vim)
+  excludesfile = ~/.gitignore
+[user]
+  name = John Nadeau
+  email = johnnnadeau@gmail.next-commit
+[push]
+  default = simple
+[alias]
+  next-commit = !git checkout $(git log --reverse --ancestry-path --pretty=%H HEAD..master | head -1)
+  nuke-branch = !sh -c 'git branch -D $1 && git push origin :$1' -

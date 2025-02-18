@@ -1,0 +1,12 @@
+set -o vi
+
+export VISUAL=nvim
+export VISUAL=nvim
+export EDITOR=nvim
+
+export REPOS="$HOME/repos"
+export DOTFILES="$REPOS/dotfiles"
+
+export GITHUB_USERNAME="johnnadeau"
+
+export ALACRITTY_TOML="/mnt/c/Users/johnn/AppData/Roaming/alacritty/alacritty.toml"
