@@ -12,10 +12,10 @@ export ALACRITTY_TOML="/mnt/c/Users/johnn/AppData/Roaming/alacritty/alacritty.to
 
 
 alias v=nvim
-alias ls="ls --color=auto"
 
 alias g=git
 alias gs="git status"
+alias ls="eza --icons=always"
 
 function chezcd {
   cd $(chezmoi source-path)
@@ -37,6 +37,9 @@ fi
 autoload -Uz compinit
 compinit -u
 
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # work related
 export PATH="$HOME/code/automation/bin:$PATH"
 QUEUEDR_USER=john
+
