@@ -17,6 +17,8 @@ alias g=git
 alias gs="git status"
 alias ls="eza --icons=always"
 
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 function chezcd {
   cd $(chezmoi source-path)
 }
@@ -28,6 +30,10 @@ fi
 
 autoload -U promptinit; promptinit
 prompt pure
+
+# work related
+export PATH="$HOME/code/automation/bin:$PATH"
+QUEUEDR_USER=john
 
 # completions
 if type brew &>/dev/null; then
@@ -42,4 +48,3 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # work related
 export PATH="$HOME/code/automation/bin:$PATH"
 QUEUEDR_USER=john
-
